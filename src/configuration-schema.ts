@@ -19,10 +19,43 @@ import { JSONSchema7 } from "json-schema";
  * see https://react-jsonschema-form.readthedocs.io/en/latest/ for documentation
  */
 export const configurationSchema: JSONSchema7 = {
+  required: [
+    "url"
+  ],
   properties: {
-    message: {
+    url: {
       type: "string",
-      title: "message",
+      format: "uri",
+      title: "iFrame URL",
+      default: "https://www.youtube.com/embed/xDMP3i36naA",
+    },
+    height: {
+      type: "string",
+      title: "Height (%)",
+      default: "100% (pre-defined by SB app.css)",
+    },
+    width: {
+      type: "string",
+      title: "Width (%)",
+      default: "100% (pre-defined by SB app.css)",
+    },
+    display: {
+      type: "string",
+      title: "Display (default: block)",
+      default: "block",
+    },
+    position: {
+      type: "string",
+      title: "Position (default: static)",
+      default: "static",
+    },
+    cssid: {
+      type: "string",
+      title: "CSS ID",
+    },
+    cssclass: {
+      type: "string",
+      title: "CSS Class",
     },
   },
 };
@@ -32,7 +65,27 @@ export const configurationSchema: JSONSchema7 = {
  * @see https://react-jsonschema-form.readthedocs.io/en/latest/api-reference/uiSchema/
  */
 export const uiSchema: UiSchema = {
-  message: {
-    "ui:help": "Please enter a message to show",
+  url: {
+    "ui:help": "Please enter the iframe URL.",
+  },
+  height: {
+    "ui:help": "Please enter a height for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%",
+    "ui:disabled": true,
+  },
+  width: {
+    "ui:help": "Please enter a width for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%",
+    "ui:disabled": true,
+  },
+  display: {
+    "ui:help": "Choose a display option, e.g. inline, none, block. Default: block",
+  },
+  position: {
+    "ui:help": "Choose a position option: relative, absolute, fixed, sticky, static, inherit, initial, unset. Default: static",
+  },
+  cssoid: {
+    "ui:help": "Add a CSS ID to the iFrame container.",
+  },
+  cssclass: {
+    "ui:help": "Add a CSS class to the iFrame container.",
   },
 };

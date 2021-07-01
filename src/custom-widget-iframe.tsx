@@ -14,14 +14,37 @@
 import React, { ReactElement } from "react";
 import { BlockAttributes } from "widget-sdk";
 
+// https://www.npmjs.com/package/react-iframe
+import Iframe from "react-iframe";
+
 /**
  * React Component
  */
 export interface CustomWidgetIframeProps extends BlockAttributes {
-  message: string;
+  url: string;
+  height: string;
+  width: string;
+  display: string;
+  position: string;
+  cssid: string;
+  cssclass: string;
 }
 
-export const CustomWidgetIframe = ({ message, contentLanguage }: CustomWidgetIframeProps): ReactElement => {
-  return <div>Hello {message} {contentLanguage}</div>;
+export const CustomWidgetIframe = ({ url, height, width, display, position, cssid, cssclass }: CustomWidgetIframeProps): ReactElement => {
+  
+  const defaultUrl = "https://www.youtube.com/embed/xDMP3i36naA";
+  const defaultDisplay = "block";
+  const defaultPosition = "static";
+  const defaultHeight = "100%";
+  const defaultWidth = "100%";
+
+  return <Iframe url={url ? url : defaultUrl}
+    // width={width ? width : defaultWidth}
+    // height={height ? height : defaultHeight}
+    display={display ? display : defaultDisplay}
+    position={position ? position : defaultPosition}
+    id={cssid}
+    className={cssclass}
+  />
 };
 

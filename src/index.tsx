@@ -50,7 +50,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
      */
     public static get observedAttributes(): string[] {
       const defaults = ["content-language", "widget-title", "on-card"];
-      return [...defaults, "message"];
+      return [...defaults, "url", "height", "width", "display", "position", "cssid", "cssclass"];
     }
 
     /**
@@ -69,11 +69,12 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
 const blockDefinition: BlockDefinition = {
     name: "custom-widget-iframe",
     factory: factory,
-    attributes: ['message'],
+    attributes: ['url', 'height', 'width', 'display', 'position', 'cssid', 'cssclass'],
     blockLevel: 'block',
     configurationSchema: configurationSchema,
     uiSchema: uiSchema,
-    label: 'Custom Widget Iframe'
+    label: 'iFrame',
+    iconUrl: '',
 };
 
 /**
