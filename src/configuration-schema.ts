@@ -32,12 +32,12 @@ export const configurationSchema: JSONSchema7 = {
     height: {
       type: "string",
       title: "Height (%)",
-      default: "100% (pre-defined by SB app.css)",
+      default: "100%",
     },
     width: {
       type: "string",
       title: "Width (%)",
-      default: "100% (pre-defined by SB app.css)",
+      default: "100%",
     },
     display: {
       type: "string",
@@ -69,12 +69,12 @@ export const uiSchema: UiSchema = {
     "ui:help": "Please enter the iframe URL.",
   },
   height: {
-    "ui:help": "Please enter a height for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%",
-    "ui:disabled": true,
+    "ui:help": "Please enter a height for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%. Note: may collide with pre-defined iframe CSS by SB app.css.",
+    // "ui:disabled": true,
   },
   width: {
-    "ui:help": "Please enter a width for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%",
-    "ui:disabled": true,
+    "ui:help": "Please enter a width for the iFrame. 1px > any number above 0, or 1% to 100%. Default: 100%. Note: may collide with pre-defined iframe CSS by SB app.css.",
+    // "ui:disabled": true,
   },
   display: {
     "ui:help": "Choose a display option, e.g. inline, none, block. Default: block",
