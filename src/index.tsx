@@ -73,7 +73,7 @@ const blockDefinition: BlockDefinition = {
     blockLevel: 'block',
     configurationSchema: configurationSchema,
     uiSchema: uiSchema,
-    label: 'iFrame',
+    label: 'DEMO: iFrame',
     iconUrl: "https://maximizeit.github.io/sb-custom-widget-iframe/resources/iframe-icon.png",
 };
 
