@@ -38,13 +38,25 @@ export const CustomWidgetIframe = ({ url, height, width, display, position, cssi
   const defaultHeight = "100%";
   const defaultWidth = "100%";
 
-  return <Iframe url={url ? url : defaultUrl}
-    // width={width ? width : defaultWidth}
-    // height={height ? height : defaultHeight}
-    display={display ? display : defaultDisplay}
-    position={position ? position : defaultPosition}
-    id={cssid}
-    className={cssclass}
-  />
+  return <div>
+      <Iframe url={url ? url : defaultUrl}
+      // width={width ? width : defaultWidth}
+      // height={height ? height : defaultHeight}
+      display={display ? display : defaultDisplay}
+      position={position ? position : defaultPosition}
+      id={cssid}
+      className={cssclass}
+    />
+    <br /><br />
+    <div data-widget-conf-grid-type="100" data-widget-type="Section" data-widget-src="internal://staffbase.content.widgets.Section">
+      <div>
+        <div data-widget-conf-type="warning" data-widget-on-card="true" data-widget-type="Infobox" data-widget-src="internal://staffbase.content.widgets.Infobox">
+          <p>PROTOTYPES AND FOR DEMO PURPOSES ONLY!</p>
+          <p>NOT FOR PRODUCTION USE!</p>
+          <p>NOT AVAILABLE TO CUSTOMERS!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 };
 
